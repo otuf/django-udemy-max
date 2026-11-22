@@ -36,3 +36,11 @@ htmlcov/
 .idea/
 .DS_Store
 Thumbs.db
+
+
+# Venv internals (venvs here are the course folders themselves)
+*/bin/
+*/lib/
+*/include/
+*/share/
+*/pyvenv.cfg
