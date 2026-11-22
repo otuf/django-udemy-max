@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% comment %} we can now use the static template tag to reference static files because we have loaded the static files app by using the load static tag {% endcomment %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'challenges/challenges.css' %}">
+    <link rel="stylesheet" href="{% static 'challenges/includes/header.css' %}">
+{% endblock  %}
+{% comment %} we are telling Django to extend the base template and inject content into the page_title block {% endcomment %}
+{% block page_title %}
+<title>All Challenges</title>
+{% endblock  %}
+{% comment %} no indentation for the dtl code here {% endcomment %}
+{% block content %}
+{% include "challenges/includes/header.html" %}
+
+<ul>
+{%for month in months%}
+<li><a href="{% url 'month-challenge' month %}">{{month|title}}</a></li>
+{% comment %} as you can see above, we are using the url template tag to generate the url for each month. The argument here is the month variable that we defined in urls.py {% endcomment %}
+{%endfor%}
+</ul>
+{% endblock  %}

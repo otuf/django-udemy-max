@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+    <title>{{month_name}}</title>
+     <link rel="stylesheet" href="{% static 'challenges/challenge.css' %}">
+    <link rel="stylesheet" href="{% static 'challenges/includes/header.css' %}">
+{% endblock %}
+{% block content %}
+{% comment %} the difference between includes and extends is that we are injecting small piece of code here rather than a template {% endcomment %}
+{% include "challenges/includes/header.html" %}
+    <!-- the name_of_variable|title filter capitalizes the first letter of each word -->
+<h1>{{month_name|title}} Challenge</h1> 
+{% if text %}
+<h2>{{text}}</h2>
+{% else %}
+<p class = "fallback">This month is not supported!</p>
+{% endif %}
+{% endblock %}

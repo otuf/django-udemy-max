@@ -1,0 +1,23 @@
+h1 {
+    font-size: 1.5rem;
+    margin : 2rem 0 1rem 0;
+    font-weight: nomral;
+    color : #cf54cf;
+
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+h1, h2{
+    color : white;
+    text-align: center;
+}
+
+.fallback {
+    text-align : center;
+    color : white;
+
+}
